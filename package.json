@@ -1,0 +1,16 @@
+{
+  "name": "api-abonnements",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API REST de gestion d'abonnements (exercice maison)",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

@@ -1,0 +1,37 @@
+@api = http://localhost:3000
+
+### Catalogue
+GET {{api}}/catalog
+
+### 1. Souscrire
+POST {{api}}/subscriptions
+Content-Type: application/json
+
+{ "companyId": "cmp_001", "plan": "starter", "billingPeriod": "monthly" }
+
+### 5. Consulter (remplacer l'id par celui reçu)
+GET {{api}}/subscriptions/sub_XXXXXXXX
+
+### 6. Lister les abonnements d'une entreprise
+GET {{api}}/companies/cmp_001/subscriptions
+
+### 2. Changer de formule
+PATCH {{api}}/subscriptions/sub_XXXXXXXX
+Content-Type: application/json
+
+{ "plan": "pro" }
+
+### 2. Passer à l'annuel
+PATCH {{api}}/subscriptions/sub_XXXXXXXX
+Content-Type: application/json
+
+{ "billingPeriod": "annual" }
+
+### 3. Résilier
+POST {{api}}/subscriptions/sub_XXXXXXXX/cancel
+
+### 4. Changer un prix (nouveaux clients uniquement)
+PUT {{api}}/catalog/pro
+Content-Type: application/json
+
+{ "monthly": 59 }
